@@ -9,6 +9,7 @@ import (
 	"os"
 	"regexp"
 	"text/template"
+	"time"
 )
 
 var (
@@ -54,6 +55,12 @@ type Stream struct {
 
 func (t *Track) setStream() {
 	t.StreamUrl = t.StreamUrl + "&client_id=" + *clientId
+	ti, err := time.Parse("2006/01/02 15:04:05 -0700", t.CreatedAt)
+	if err != nil {
+		t.CreatedAt = time.RFC822
+	} else {
+		t.CreatedAt = ti.Format(time.RFC822)
+	}
 	return
 	/*
 		if t.StreamUrl != "" {
