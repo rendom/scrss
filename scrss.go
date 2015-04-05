@@ -54,7 +54,6 @@ type Stream struct {
 
 func (t *Track) setStream() {
 	t.StreamUrl = t.StreamUrl + "&client_id=" + *clientId
-	fmt.Println(t.StreamUrl)
 	return
 	/*
 		if t.StreamUrl != "" {
