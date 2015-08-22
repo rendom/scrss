@@ -1,7 +1,7 @@
 # scrss
 Soundcloud playlist to rss
 
-```Usage of ./scrss:
+´´´Usage of ./scrss:
   -cid="": Client id
   -limit="10": Limit items
   -offset="0": Offset
